@@ -9,7 +9,7 @@
 
 
 .container>div {
-    min-width: 310px;
+    min-width: 300px;
     box-sizing: border-box;
     height: auto;
     flex: 1;
@@ -30,12 +30,14 @@
     text-align: center;
 }
 
+input {
+    border: none;
+    outline: none;
+}
 
 .title-input {
     width: 100%;
     height: 100%;
-    border: none;
-    outline: none;
     font-size: 15px;
     padding: 0 10px;
     text-align: center;
@@ -43,8 +45,6 @@
 }
 
 .description-input {
-    border: none;
-    outline: none;
     font-size: 15px;
     padding: 10px;
     height: 90%;

@@ -14,8 +14,8 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    background-color: #d3867c;
-    color: rgb(161, 22, 22);
+    background-color: rgb(245, 89, 68);
+    color: white;
     box-sizing: border-box;
     border: none;
     outline: none;
@@ -25,13 +25,11 @@
 
 .event-delete:hover {
     background-color: rgb(194, 52, 52);
-    color: white;
 }
 
 .event-delete:active {
-    background-color: rgb(206, 91, 91);
+    background-color: rgb(168, 33, 33);
     width: 95px;
-    color: white;
 }
 
 .event-date {
