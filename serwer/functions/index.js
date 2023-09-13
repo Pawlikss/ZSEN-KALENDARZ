@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Import function triggers from their respective submodules:
  *
@@ -6,19 +7,19 @@
  *
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
-// eslint-disable-next-line no-unused-vars
+
 const functions = require("firebase-functions");
 
 const {onRequest} = require("firebase-functions/v2/https");
-// eslint-disable-next-line no-unused-vars
+
 const logger = require("firebase-functions/logger");
-// eslint-disable-next-line no-unused-vars
+
 const {onValueCreated} = require("firebase-functions/v2/database");
-// eslint-disable-next-line no-unused-vars
+
 const admin = require("firebase-admin");
 admin.initializeApp();
 
-
+const cors = require("cors")({origin: true});
 // exports.helloWorld = onRequest((request, response) => {
 //   logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
@@ -27,7 +28,7 @@ admin.initializeApp();
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-
+app.use(cors);
 app.use(bodyParser.json());
 
 
@@ -84,6 +85,9 @@ app.post("/kalendarz", checkAuthorization, async (req, res) =>{
 
 app.get("/helo", (req, res) =>{
   return res.status(200).send(("<marquee width=100>poszło</marquee>"));
+});
+app.get("/helo2", (req, res) =>{
+  return res.status(200).json({message: "<marquee width=100>poszło</marquee>"});
 });
 
 
