@@ -4,6 +4,7 @@
     flex-direction: row;
     min-height: 800px;
     background-color: #1a203a;
+    overflow: auto;
 }
 
 
@@ -73,6 +74,7 @@ input {
     text-align: center;
     padding: 0.5rem;
     width: clamp(110px, 32%, 170px);
+    color: rgb(36, 27, 27);
 }
 
 .data-element p {
@@ -83,21 +85,21 @@ input {
 .title-center {
     color: gray;
     text-align: center;
-    margin: 0;
+    margin: 1rem 0;
 }
 
 .events {
     background-color: #4d5a93;
     border-radius: 10px;
-    height: clamp(300px, 50%, 600px);
+    height: clamp(200px, 50%, 600px);
     width: clamp(200px, 75%, 1000px);
     margin-inline: auto;
     overflow-y: auto;
+
 }
 
 .add-button {
     background-color: #96ffff;
-    border: none;
     padding: 10px;
     border-radius: 10px;
     margin-top: 1rem;

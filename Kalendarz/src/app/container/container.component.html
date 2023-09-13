@@ -1,14 +1,14 @@
 <div class="container">
     <div class="left">
         <div class="title">
-            <input type="text" maxlength="40" class="title-input" placeholder="title" [(ngModel)]="title"> 
+            <input type="text" maxlength="40" class="title-input" placeholder="title" [(ngModel)]="title">
         </div>
         <div class="data-inputs">
             <div class="data-element">
-                <p>data</p><input type="date" [(ngModel)]="currentDate" (ngModelChange)="onDateChange($event)">
+                <p>date</p><input type="date" [(ngModel)]="currentDate" (ngModelChange)="onDateChange($event)">
             </div>
             <div class="data-element">
-                <p>godzina</p><input type="time" [(ngModel)]="currentHour" (ngModelChange)="onHourChange($event)">
+                <p>hour</p><input type="time" [(ngModel)]="currentHour" (ngModelChange)="onHourChange($event)">
             </div>
         </div>
         <h1 class="title-center">Description</h1>
