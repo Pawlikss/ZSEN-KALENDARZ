@@ -1,0 +1,45 @@
+.event-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #96ffff;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+
+.event-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #d3867c;
+    color: rgb(161, 22, 22);
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.event-delete:hover {
+    background-color: rgb(194, 52, 52);
+    color: white;
+}
+
+.event-delete:active {
+    background-color: rgb(206, 91, 91);
+    width: 95px;
+    color: white;
+}
+
+.event-date {
+    color: green;
+    font-size: 20px;
+}
+
+.event-description-2 {
+    justify-content: justify;
+    padding: 1rem;
+}

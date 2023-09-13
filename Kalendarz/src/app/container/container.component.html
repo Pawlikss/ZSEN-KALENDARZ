@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="left">
+        <div class="title">
+            <input type="text" maxlength="40" class="title-input" placeholder="title">
+        </div>
+        <div class="data-inputs">
+            <div class="data-element">
+                <p>data</p><input type="date">
+            </div>
+            <div class="data-element">
+                <p>godzina</p><input type="time">
+            </div>
+        </div>
+        <h1 class="title-center">Description</h1>
+        <div class="data-description">
+            <textarea class="description-input" placeholder="write your note"></textarea>
+        </div>
+        <div class="add"><input type="submit" class="add-button" value="add"></div>
+    </div>
+    <div class="right">
+        <h1 class="title-center">Current events</h1>
+        <div class="events">
+            <app-event></app-event>
+
+        </div>
+    </div>

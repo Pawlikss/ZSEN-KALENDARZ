@@ -1,0 +1,134 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-height: 800px;
+    background-color: #1a203a;
+}
+
+
+
+.container>div {
+    min-width: 310px;
+    box-sizing: border-box;
+    height: auto;
+    flex: 1;
+    padding: 1rem;
+}
+
+
+
+.title {
+    width: clamp(200px, 95%, 500px);
+    height: 2rem;
+    margin-inline: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.title ::placeholder {
+    text-align: center;
+}
+
+
+.title-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #bcdced;
+}
+
+.description-input {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 10px;
+    height: 90%;
+    width: 90%;
+    box-sizing: border-box;
+    background-color: #bcdced;
+    border-radius: 10px;
+}
+
+.data-inputs {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.data-inputs input {
+    width: clamp(105px, 95%, 150px);
+}
+
+.data-element {
+    background-color: #4d5a93;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.5rem;
+    width: clamp(110px, 32%, 170px);
+}
+
+.data-element p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.title-center {
+    color: gray;
+    text-align: center;
+    margin: 0;
+}
+
+.events {
+    background-color: #4d5a93;
+    border-radius: 10px;
+    height: clamp(300px, 50%, 600px);
+    width: clamp(200px, 75%, 1000px);
+    margin-inline: auto;
+    overflow-y: auto;
+}
+
+.add-button {
+    background-color: #96ffff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 1rem;
+    justify-content: center;
+    width: 100px;
+    color: #12246b;
+    font-size: 15px;
+}
+
+.add-button:hover {
+    background-color: #79e2e2;
+}
+
+.add-button:active {
+    background-color: #5eb4b4;
+    width: 95px;
+}
+
+.data-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4d5a93;
+    border-radius: 10px;
+    height: 500px;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.add {
+    display: flex;
+    justify-content: center;
+}
