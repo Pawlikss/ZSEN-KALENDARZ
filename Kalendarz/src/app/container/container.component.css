@@ -30,9 +30,14 @@
     text-align: center;
 }
 
-input {
+input,
+textarea {
     border: none;
     outline: none;
+}
+
+textarea {
+    resize: none;
 }
 
 .title-input {
@@ -106,6 +111,7 @@ input {
     width: 100px;
     color: #12246b;
     font-size: 15px;
+    border: none;
 }
 
 .add-button:hover {
