@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { ContainerFormService } from './container-form.service';
 
 @Component({
   selector: 'app-container',
@@ -12,6 +13,13 @@ export class ContainerComponent {
   currentHour: string = "";
   description: string = "";
   title: string = "";
+  events: any;
+
+  constructor(private eventData: ContainerFormService) {
+    this.eventData.events().subscribe((data) => {
+      this.events = data;
+    })
+  }
 
   onDateChange(newDateValue: string) {
     console.log('Date changed to:', newDateValue);
@@ -22,19 +30,10 @@ export class ContainerComponent {
    
   }
   getValues(data: any) {
-    return data
-  }
-
-  constructor(private http: HttpClient){}
-  ngOnInit() {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'dupa1234',
-    });
-
-    this.http.post<any>('https://kalendarz-zsen.web.app/kalendarz', this.getValues ,{ headers } ).subscribe(data => {
-      console.log(data);
-    });
+    console.log(data)
+    this.eventData.saveEvent(data).subscribe((res) => {
+      console.log(res)
+    })
   }
 }
 
