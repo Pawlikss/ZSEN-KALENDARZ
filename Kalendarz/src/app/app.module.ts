@@ -7,12 +7,14 @@ import { ContainerComponent } from './container/container.component';
 import { EventComponent } from './event/event.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContainerFormService } from './container/container-form.service';
+import { WczytajOsobyComponent } from './wczytaj-osoby/wczytaj-osoby.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
-    EventComponent
+    EventComponent,
+    WczytajOsobyComponent
   ],
   imports: [
     BrowserModule,

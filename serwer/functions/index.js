@@ -44,7 +44,7 @@ const checkAuthorization = (req, res, next) => {
 };
 
 // A test route to check the base
-app.get("/baza", (req, res) => {
+app.get("/baza",checkAuthorization, (req, res) => {
   return admin.database().ref("wydarzenia/").once("value", (snapshot) => {
     const event = snapshot.val();
     res.json({wydarzenia:event});
@@ -61,7 +61,6 @@ app.get("/baza2", async (req, res) => {
 
 // Define a route to handle incoming POST requests
 app.post("/kalendarz", checkAuthorization, async (req, res) =>{
-  const dupa1="1";
   const {data, godzina, opis, nazwa} = req.body;
   if (!data || !nazwa) {
     return res.status(400).json({error: "Bad Request"});
@@ -73,7 +72,6 @@ app.post("/kalendarz", checkAuthorization, async (req, res) =>{
 });
 
 app.post("/kalendarzTest", checkAuthorization, async (req, res) =>{
-  const dupa1="1";
   const {data, godzina, opis, nazwa} = req.body;
   if (!data || !nazwa) {
     return res.status(400).json({error: "Bad Request"});

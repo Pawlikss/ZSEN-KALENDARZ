@@ -1,0 +1,14 @@
+<div *ngIf="isDataLoaded">
+    <div *ngFor="let wydarzenie of wydarzenia"> <!--nie mma pojecia czemu ale działa ~Dawid 15.09.2023 00:49 -->
+      <p>Data: {{ wydarzenie.data }} Godzina: {{ wydarzenie.godzina }} Nazwa: {{ wydarzenie.nazwa }} Opis: {{ wydarzenie.opis }}</p>
+      <!-- <p>Godzina: {{ wydarzenie.godzina }}</p>
+      <p>Nazwa: {{ wydarzenie.nazwa }}</p>
+      <p>Opis: {{ wydarzenie.opis }}</p> -->
+    
+    </div>
+  </div>
+  
+  <div *ngIf="!isDataLoaded">
+    <p>Loading data...</p>
+  </div>
+  
