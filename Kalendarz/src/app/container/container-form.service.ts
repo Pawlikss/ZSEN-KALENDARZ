@@ -6,11 +6,12 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class ContainerFormService {
     url = "https://kalendarz-zsen.web.app/kalendarz"
+    url2 = "https://kalendarz-zsen.web.app/baza"
 
     constructor(private http: HttpClient) {}
 
     events() {
-        return this.http.get(this.url)
+        return this.http.get(this.url2)
     }
     saveEvent(data: any) {
         const headers = new HttpHeaders({
