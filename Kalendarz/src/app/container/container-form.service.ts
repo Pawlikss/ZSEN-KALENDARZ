@@ -16,6 +16,6 @@ export class ContainerFormService {
         const headers = new HttpHeaders({
             'Authorization': 'dupa1234', 
           });
-        return this.http.post(this.url,{data},{ headers })
+        return this.http.post(this.url,data,{ headers })
     }
 }
