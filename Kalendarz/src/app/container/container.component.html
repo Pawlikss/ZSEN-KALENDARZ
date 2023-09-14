@@ -12,7 +12,8 @@
                         (ngModelChange)="onDateChange($event)">
                 </div>
                 <div class="data-element">
-                    <p>hour(optional)</p><input name="godzina" type="time" [(ngModel)]="currentHour"
+                    <p>Set hour</p>
+                    <input type="checkbox" class="hour-able"><input name="godzina" type="time" [(ngModel)]="currentHour"
                         (ngModelChange)="onHourChange($event)">
                 </div>
             </div>

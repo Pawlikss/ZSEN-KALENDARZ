@@ -30,6 +30,12 @@
     text-align: center;
 }
 
+.hour-able {
+    height: 20px;
+    width: 20px;
+    border: none;
+}
+
 input,
 textarea {
     border: none;
