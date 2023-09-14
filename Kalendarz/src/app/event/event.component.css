@@ -7,6 +7,13 @@
     box-sizing: border-box;
 }
 
+.event-title {
+    text-align: center;
+    color: rgb(145, 30, 30);
+    font-size: 34px;
+    margin: 0;
+}
+
 input {
     border: none;
     outline: none;
@@ -41,4 +48,10 @@ input {
 .event-description-2 {
     justify-content: justify;
     padding: 1rem;
+}
+
+@media only screen and (max-width: 400px) {
+    .event-title {
+        font-size: 25px;
+    }
 }
