@@ -45,20 +45,9 @@ const checkAuthorization = (req, res, next) => {
 
 // A test route to check the base
 app.get("/baza", (req, res) => {
-  return admin.database().ref("posts/").once("value", (snapshot) => {
+  return admin.database().ref("wydarzenia/").once("value", (snapshot) => {
     const event = snapshot.val();
-    res.send(`
-            <!doctype html>
-            <html>
-                <head>
-                    <title>${event.name}</title>
-                </head>
-                <body>
-                    <h1>Title ${"posts/"} in 
-                    ${JSON.stringify(event, null, 4)}</h1>
-                </body>
-            </html>`,
-    );
+    res.json({wydarzenia:event});
   });
 });
 app.get("/baza2", async (req, res) => {
@@ -77,12 +66,26 @@ app.post("/kalendarz", checkAuthorization, async (req, res) =>{
   if (!data || !nazwa) {
     return res.status(400).json({error: "Bad Request"});
   }
-  if (!godzina ) {/* dodaj na cały dzień */}
-  if (!opis ) {/* dodaj na cały dzień */}
+  if (!godzina ) {godzina = "allDay"}
 
-  return res.status(200).send("poszlo :){"+dupa1+"}");
+  return res.status(200).json({message:"poszło :)"});
 });
 
+app.post("/kalendarzTest", checkAuthorization, async (req, res) =>{
+  const dupa1="1";
+  const {data, godzina, opis, nazwa} = req.body;
+  if (!data || !nazwa) {
+    return res.status(400).json({error: "Bad Request"});
+  }
+  if (!godzina ) {req.body.godzina = "allDay"}
+  try {
+    await admin.database().ref("wydarzenia/").push(req.body);
+    return res.status(200).send("dodano użytkownika");
+  } catch (error) {
+    return res.status(500).send("Internal Server Error");
+  }
+  
+});
 app.get("/helo", (req, res) =>{
   return res.status(200).send(("<marquee width=100>poszło</marquee>"));
 });

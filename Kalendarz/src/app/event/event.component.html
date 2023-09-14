@@ -1,5 +1,6 @@
 <div *ngFor="let item of events" class="event-container">
 
+    <h1 class="event-title">{{item.nazwa}}</h1>
     <div class="event-date"> {{item.data}} | {{item.godzina}}</div>
     <div class="event-description-2">
         {{item.description}}
