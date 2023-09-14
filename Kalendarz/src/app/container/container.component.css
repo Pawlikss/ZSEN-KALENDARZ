@@ -2,7 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    min-height: 800px;
     background-color: #1a203a;
     overflow: auto;
 }
@@ -92,7 +91,7 @@ input {
     background-color: #4d5a93;
     border-radius: 10px;
     height: clamp(200px, 50%, 600px);
-    width: clamp(200px, 75%, 1000px);
+    width: clamp(200px, 75%, 700px);
     margin-inline: auto;
     overflow-y: auto;
 
@@ -133,4 +132,27 @@ input {
 .add {
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .events {
+        height: 400px;
+        width: clamp(100px, 75%, 700px);
+    }
+
+    .title {
+        width: clamp(100px, 95%, 500px);
+    }
+
+    .container>div {
+        min-width: 150px;
+    }
+
+    .data-description {
+        height: 400px;
+    }
 }
