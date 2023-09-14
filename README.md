@@ -6,8 +6,9 @@
 ## endpoints:
 - /baza <details>-służy do wyświetlania wszystkiego w bazie  ```
   https://kalendarz-zsen.web.app/baza```</details>
-- /baza2 <details>- służy do dodawania uzytkowników   ```
-  https://kalendarz-zsen.web.app/baza2```</details>
-- /kalendarz <details>- główny endpoint ```
+- /kalendarz <details>- główny endpoint, dodaje użytkowników ```
   https://kalendarz-zsen.web.app/kalendarz```</details>
-- /helo <details>- jest to testowy endpoint, do sprawdzania czy połączenie działa</details>
+- /kalendarzTest <details>- testowy endpoint do wprowadzania zmian przed połączenień z /kalendarz ```
+  https://kalendarz-zsen.web.app/kalendarzTest```</details>
+- /helo <details>- jest to testowy endpoint, do sprawdzania czy połączenie działa ```
+  https://kalendarz-zsen.web.app/helo```</details>
