@@ -1,10 +1,9 @@
-<div class="event-container">
-    <h1 class="event-title">jakis tam tytul niewiem jaki ale noooooo</h1>
-    <div class="event-date"> 31.02.2023r | 01:00</div>
-    <div class="event-description-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae earum dignissimos
-        eaque eum quisquam cupiditate velit totam. A culpa, adipisci nemo mollitia corrupti, deleniti, consequatur
-        laborum blanditiis ratione sequi at?
-    </div>
+<div *ngFor="let item of events" class="event-container">
 
+    <h1 class="event-title">{{item.nazwa}}</h1>
+    <div class="event-date"> {{item.data}} | {{item.godzina}}</div>
+    <div class="event-description-2">
+        {{item.description}}
+    </div>
     <input type="button" class="event-delete" value="delete">
 </div>

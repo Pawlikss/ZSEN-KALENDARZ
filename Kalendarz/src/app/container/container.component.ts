@@ -31,6 +31,7 @@ export class ContainerComponent {
   }
   getValues(data: any) {
     console.log(data)
+    const data2 = JSON.stringify(data)
     this.eventData.saveEvent(data).subscribe((res) => {
       console.log(res)
     })

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component';
 import { EventComponent } from './event/event.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContainerFormService } from './container/container-form.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ContainerFormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
