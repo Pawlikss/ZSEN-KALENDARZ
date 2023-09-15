@@ -1,0 +1,153 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #1a203a;
+    overflow: auto
+}
+
+.container>div {
+    min-width: 300px;
+    box-sizing: border-box;
+    height: auto;
+    flex: 1;
+    padding: 1rem
+}
+
+.title {
+    width: clamp(200px, 95%, 500px);
+    height: 2rem;
+    margin-inline: auto;
+    overflow: hidden;
+    border-radius: 10px
+}
+
+.title ::placeholder {
+    text-align: center
+}
+
+input {
+    border: none;
+    outline: 0
+}
+
+.title-input {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #bcdced
+}
+
+.description-input {
+    font-size: 15px;
+    padding: 10px;
+    height: 90%;
+    width: 90%;
+    box-sizing: border-box;
+    background-color: #bcdced;
+    border-radius: 10px
+}
+
+.events {
+    background-color: #4d5a93;
+    border-radius: 10px;
+    height: clamp(200px, 50%, 600px);
+    width: clamp(200px, 75%, 700px);
+    margin-inline: auto;
+    overflow-y: auto
+}
+
+.data-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4d5a93;
+    border-radius: 10px;
+    height: 500px;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box
+}
+
+@media only screen and (max-width:800px) {
+    .container {
+        flex-direction: column
+    }
+
+    .events {
+        height: 400px;
+        width: clamp(100px, 75%, 700px)
+    }
+
+    .title {
+        width: clamp(100px, 95%, 500px)
+    }
+
+    .container>div {
+        min-width: 150px
+    }
+
+    .data-description {
+        height: 400px
+    }
+}
+
+.event-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #96ffff;
+    padding: 1rem;
+    box-sizing: border-box
+}
+
+.event-title {
+    text-align: center;
+    color: #911e1e;
+    font-size: 34px;
+    margin: 0
+}
+
+input {
+    border: none;
+    outline: 0
+}
+
+.event-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #f55944;
+    color: #fff;
+    box-sizing: border-box;
+    width: 100px;
+    border-radius: 10px
+}
+
+.event-delete:hover {
+    background-color: #c23434
+}
+
+.event-delete:active {
+    background-color: #a82121;
+    width: 95px
+}
+
+.event-date {
+    color: green;
+    font-size: 20px
+}
+
+.event-description-2 {
+    justify-content: justify;
+    padding: 1rem
+}
+
+@media only screen and (max-width:400px) {
+    .event-title {
+        font-size: 25px
+    }
+}

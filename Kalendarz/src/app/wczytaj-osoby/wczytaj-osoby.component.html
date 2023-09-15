@@ -1,6 +1,22 @@
+<div class="events">
+  <div *ngIf="kliknietyJakisEvent">
+<div class="event-container">
+
+  <h1 class="event-title">{{ kliknietyEvent?.nazwa }}</h1>
+
+    <div class="event-date"> {{ kliknietyEvent?.data }}</div>
+    <div class="event-description-2">
+      {{ kliknietyEvent?.opis || "bez opisu" }}
+    </div>
+    <input type="button" class="event-delete" value="delete">
+</div>
+</div>
+<div *ngIf="!kliknietyJakisEvent">
+  </div>
+  
 <div *ngIf="isDataLoaded">
-    <div *ngFor="let wydarzenie of wydarzenia"> <!--nie mma pojecia czemu ale działa ~Dawid 15.09.2023 00:49 -->
-      <p>Data: {{ wydarzenie.data }} Godzina: {{ wydarzenie.godzina }} Nazwa: {{ wydarzenie.nazwa }} Opis: {{ wydarzenie.opis }}</p>
+    <div *ngFor="let wydarzenie of wydarzenia" style="border:1px solid black;" (click)="logWydarzenieData(wydarzenie)"> <!--nie mma pojecia czemu ale działa ~Dawid 15.09.2023 00:49 -->
+      <p >Data: {{ wydarzenie.data }} Godzina: {{ wydarzenie.godzina }} Nazwa: {{ wydarzenie.nazwa }} Opis: {{ wydarzenie.opis }}</p>
       <!-- <p>Godzina: {{ wydarzenie.godzina }}</p>
       <p>Nazwa: {{ wydarzenie.nazwa }}</p>
       <p>Opis: {{ wydarzenie.opis }}</p> -->
@@ -11,4 +27,5 @@
   <div *ngIf="!isDataLoaded">
     <p>Loading data...</p>
   </div>
+</div>
   

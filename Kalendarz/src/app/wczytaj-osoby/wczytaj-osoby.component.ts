@@ -9,6 +9,21 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 export class WczytajOsobyComponent {
   wydarzenia: any[] =[]; //??????? array objektów to array? kto by sie spodziewał ....
   isDataLoaded = false;  //nie zaladowalol sie
+  kliknietyJakisEvent = false;  //nie zaladowalol sie
+
+  kliknietyEvent= {nazwa:"",opis:"",data:"",godzina:""};
+
+  logWydarzenieData(wydarzenie: any) {
+    console.log('Clicked wydarzenie:', wydarzenie);
+    this.kliknietyJakisEvent = true;
+    if (this.kliknietyEvent == wydarzenie){
+      this.kliknietyJakisEvent = false;
+      this.kliknietyEvent= {nazwa:"",opis:"",data:"",godzina:""};
+      return
+    }
+    this.kliknietyEvent = wydarzenie;
+    
+  }
   constructor(private http: HttpClient){}
   ngOnInit() {
     const headers = new HttpHeaders({
@@ -21,7 +36,13 @@ export class WczytajOsobyComponent {
 
       this.wydarzenia = Object.keys(data["wydarzenia"]).map(key => data["wydarzenia"][key]); // pierdolone obiekty i ich losowe nazwy
       this.isDataLoaded = true; // jak sie stronka zaladuje to zmien tekst
-      
+      console.log(this.wydarzenia)
+      this.wydarzenia.sort((a: { data: string; }, b: { data: string; }) => {
+        const dateA = a.data.split("-").reverse().join("-");
+       const dateB = b.data.split("-").reverse().join("-");
+       return dateA.localeCompare(dateB);
+     });
+
       // (Object.values(data["wydarzenia"])).forEach(element => {
       //   console.log(element)
       // });

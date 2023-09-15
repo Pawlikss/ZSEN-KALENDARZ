@@ -3,23 +3,27 @@
     <div class="left">
         <form (ngSubmit)="getValues(Form.value)" #Form="ngForm">
             <div class="title">
-                <input type="text" name="nazwa" maxlength="40" class="title-input" placeholder="title"
+                <input type="text" name="nazwa" maxlength="40" class="title-input" placeholder="tytuł"
                     [(ngModel)]="title">
             </div>
             <div class="data-inputs">
                 <div class="data-element">
-                    <p>date</p><input name="data" type="date" [(ngModel)]="currentDate"
+                    <p>Data</p><input name="data" type="date" [(ngModel)]="currentDate"
                         (ngModelChange)="onDateChange($event)">
                 </div>
                 <div class="data-element">
-                    <p>Set hour</p>
-                    <input type="checkbox" class="hour-able"><input name="godzina" type="time" [(ngModel)]="currentHour"
-                        (ngModelChange)="onHourChange($event)">
+                    <p>Cały dzień?</p>
+                    <!-- <input type="checkbox" class="hour-able" >
+                    <input name="godzina" type="time" [(ngModel)]="currentHour"(ngModelChange)="onHourChange($event)"> -->
+                    <input type="checkbox" class="hour-able" [(ngModel)]="disableInput" [ngModelOptions]="{standalone: true}">
+                    <input name="godzina" type="time" [(ngModel)]="currentHour" [disabled]="disableInput" (ngModelChange)="onHourChange($event)" >
+                        
+                    
                 </div>
             </div>
-            <h1 class="title-center">Description</h1>
+            <h1 class="title-center">Opis</h1>
             <div class="data-description">
-                <textarea name="opis" class="description-input" placeholder="write your note"
+                <textarea name="opis" class="description-input" placeholder="Opis wydarzenia (opcjonalne)"
                     [(ngModel)]="description"></textarea>
             </div>
             <div class="add"><button class="add-button">add</button></div>
@@ -27,9 +31,9 @@
     </div>
     <div>
         <h1 class="title-center">Current events</h1>
-        <div class="events">
-            <app-event></app-event>
+        
+            <!-- <app-event></app-event> -->
             <app-wczytaj-osoby></app-wczytaj-osoby>
 
-        </div>
+        
     </div>

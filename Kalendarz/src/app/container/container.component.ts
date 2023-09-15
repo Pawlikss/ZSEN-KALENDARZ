@@ -14,6 +14,7 @@ export class ContainerComponent {
   description: string = "";
   title: string = "";
   events: any;
+  disableInput: boolean = false;
 
   constructor(private eventData: ContainerFormService) {
     this.eventData.events().subscribe((data) => {
@@ -26,6 +27,7 @@ export class ContainerComponent {
    
   }
   onHourChange(newHourValue: string) {
+    this.currentHour = newHourValue;
     console.log('Hour changed to:', newHourValue);
    
   }
