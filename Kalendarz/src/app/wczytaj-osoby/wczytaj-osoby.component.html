@@ -2,11 +2,11 @@
   <div *ngIf="kliknietyJakisEvent">
 <div class="event-container">
 
-  <h1 class="event-title">{{ kliknietyEvent?.nazwa }}</h1>
+  <h1 class="event-title">{{ kliknietyEvent.nazwa }}</h1>
 
-    <div class="event-date"> {{ kliknietyEvent?.data }}</div>
+    <div class="event-date"> {{ kliknietyEvent.data }}</div>
     <div class="event-description-2">
-      {{ kliknietyEvent?.opis || "bez opisu" }}
+      {{ kliknietyEvent.opis || "bez opisu" }}
     </div>
     <input type="button" class="event-delete" value="delete">
 </div>

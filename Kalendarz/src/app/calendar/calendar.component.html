@@ -1,0 +1,21 @@
+<div class="calendar">
+  <div class="header">
+    <button (click)="previousMonth()">Previous</button>
+    <h2>{{ currentMonth | date: 'MMMM yyyy' }}</h2>
+    <button (click)="nextMonth()">Next</button>
+  </div>
+  <div class="days">
+    <div *ngFor="let day of daysOfWeek" class="day">{{ day }}</div>
+  </div>
+  <div class="grid">
+    <!-- Display the leading spaces (empty cells) -->
+    <div *ngFor="let cell of leadingSpaces" class="date empty-date">
+      {{ cell.date ? cell.date.getDate() : '' }}
+    </div>
+    
+    <!-- Display the dates for the current month -->
+    <div *ngFor="let date of dates" class="date" [ngClass]="{'next-month-date': date.date && date.date.getMonth() !== currentMonth.getMonth()}">
+      {{ date.date ? date.date.getDate() : '' }}
+    </div>
+  </div>
+</div>

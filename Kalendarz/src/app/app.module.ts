@@ -8,13 +8,15 @@ import { EventComponent } from './event/event.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContainerFormService } from './container/container-form.service';
 import { WczytajOsobyComponent } from './wczytaj-osoby/wczytaj-osoby.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
     EventComponent,
-    WczytajOsobyComponent
+    WczytajOsobyComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
