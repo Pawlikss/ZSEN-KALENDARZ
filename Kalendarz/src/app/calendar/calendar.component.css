@@ -93,4 +93,8 @@
     color: #fff;
     border-radius: 50%;
   }
-  
+
+.green-date {
+  background-color: green;
+  color: white; 
+}

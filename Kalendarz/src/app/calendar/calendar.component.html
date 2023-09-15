@@ -1,8 +1,8 @@
 <div class="calendar">
   <div class="header">
-    <button (click)="previousMonth()">Previous</button>
-    <h2>{{ currentMonth | date: 'MMMM yyyy' }}</h2>
-    <button (click)="nextMonth()">Next</button>
+    <button (click)="previousMonth()">Wcześniejszy</button>
+    <h2>{{ miesiac_jaki_mamy }}</h2>
+    <button (click)="nextMonth()">Następny</button>
   </div>
   <div class="days">
     <div *ngFor="let day of daysOfWeek" class="day">{{ day }}</div>
@@ -12,9 +12,12 @@
     <div *ngFor="let cell of leadingSpaces" class="date empty-date">
       {{ cell.date ? cell.date.getDate() : '' }}
     </div>
-    
+
     <!-- Display the dates for the current month -->
-    <div *ngFor="let date of dates" class="date" [ngClass]="{'next-month-date': date.date && date.date.getMonth() !== currentMonth.getMonth()}">
+    <div *ngFor="let date of dates" class="date" [ngClass]="{
+      'next-month-date': date.date && date.date.getMonth() !== currentMonth.getMonth(),
+      'green-date': date.date && isDateInWydarzenia(date.date)
+    }">
       {{ date.date ? date.date.getDate() : '' }}
     </div>
   </div>

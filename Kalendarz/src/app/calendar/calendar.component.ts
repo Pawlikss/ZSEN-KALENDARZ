@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import {SharedDataService } from "../wyslij-eventy.service"
 
 interface CalendarCell {
   date: Date | null;
@@ -10,21 +11,22 @@ interface CalendarCell {
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent {
+  constructor(private sharedDataService: SharedDataService) {}
   @Input() currentMonth: Date = new Date();
-  daysOfWeek: string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']; // Starting with Monday
+  wydarzenia: any[] = [];
 
+  
+
+  daysOfWeek: string[] = ['P', 'W', 'Ś', 'C', 'P', 'S', 'N'];
+  miesiac_jaki_mamy=this.currentMonth.toLocaleString('pl-PL', { month: 'long' })+" "+this.currentMonth.getFullYear();
+  
   get leadingSpaces(): CalendarCell[] {
     const year = this.currentMonth.getFullYear();
     const month = this.currentMonth.getMonth();
     const firstDay = new Date(year, month, 1);
-    let dayOfWeek = firstDay.getDay(); // 0 (Sunday) to 6 (Saturday)
+    let dayOfWeek = firstDay.getDay();
 
-    // Adjust for Monday as the first day of the week
-    if (dayOfWeek === 0) {
-      dayOfWeek = 7;
-    }
-
-    // Calculate the number of leading blank spaces
+    
     const leadingSpaces: CalendarCell[] = [];
     const previousMonthLastDay = new Date(year, month, 0).getDate();
 
@@ -66,11 +68,31 @@ get dates(): CalendarCell[] {
     const newMonth = new Date(this.currentMonth);
     newMonth.setMonth(newMonth.getMonth() - 1);
     this.currentMonth = newMonth;
+    this.miesiac_jaki_mamy=this.currentMonth.toLocaleString('pl-PL', { month: 'long' })+" "+this.currentMonth.getFullYear();
+    console.log(this.wydarzenia)
   }
 
   nextMonth() {
     const newMonth = new Date(this.currentMonth);
     newMonth.setMonth(newMonth.getMonth() + 1);
     this.currentMonth = newMonth;
+    this.miesiac_jaki_mamy=this.currentMonth.toLocaleString('pl-PL', { month: 'long' })+" "+this.currentMonth.getFullYear();
+    console.log(this.wydarzenia[0]["data"])
+  }
+  isDateInWydarzenia(date: Date): boolean {
+    const modifiedDate = new Date(date); // Create a new Date object to avoid modifying the original date
+    modifiedDate.setDate(modifiedDate.getDate() + 1); // Subtract one day
+    const dateString = modifiedDate.toISOString().split('T')[0]; // Convert modified date to yyyy-mm-dd format
+    return this.wydarzenia.some(event => event.data === dateString);
+  }
+  
+  
+
+  ngOnInit() {
+    // Subscribe to the observable to receive updates
+    this.sharedDataService.wydarzenia$.subscribe(data => {
+      this.wydarzenia = data;
+      // Handle data updates here
+    });
   }
 }

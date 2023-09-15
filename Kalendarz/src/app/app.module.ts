@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContainerFormService } from './container/container-form.service';
 import { WczytajOsobyComponent } from './wczytaj-osoby/wczytaj-osoby.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { SharedDataService } from './wyslij-eventy.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ContainerFormService],
+  providers: [ContainerFormService, SharedDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

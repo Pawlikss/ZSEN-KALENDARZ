@@ -80,9 +80,9 @@ app.post("/kalendarzTest", checkAuthorization, async (req, res) =>{
   if (!opis ) {req.body.opis = ""}
   try {
     await admin.database().ref("wydarzenia/").push(req.body);
-    return res.status(200).send("dodano użytkownika");
+    return res.status(200).json({message:"dodano użytkownika"});
   } catch (error) {
-    return res.status(500).send("Internal Server Error");
+    return res.status(500).json({error:"Internal Server Error"});
   }
   
 });
