@@ -117,9 +117,10 @@ input {
 
 .event-title {
     text-align: center;
-    color: #911e1e;
+    color: #0f132b;
     font-size: 34px;
-    margin: 0
+    margin: 0.5%;
+
 }
 
 input {
@@ -149,13 +150,18 @@ input {
 }
 
 .event-date {
-    color: green;
-    font-size: 20px
+    color: rgb(12, 56, 166);
+    font-size: 20px;
 }
 
 .event-description-2 {
     justify-content: justify;
-    padding: 1rem
+    padding: 1rem;
+    color: navy;
+    word-wrap:break-word;
+    max-width:100%;
+    font-weight: bold;
+
 }
 
 @media only screen and (max-width:400px) {
@@ -170,6 +176,8 @@ input {
     margin-top: 1%;
     border-radius: 10px;
     padding: 2%;
+    font-size: 115%;
+    word-wrap: break-word;
     
 }
 .event-item:hover{
