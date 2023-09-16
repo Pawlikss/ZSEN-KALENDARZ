@@ -9,7 +9,7 @@
   </div>
   <div class="grid">
     <!-- Display the leading spaces (empty cells) -->
-    <div *ngFor="let cell of leadingSpaces" class="date empty-date">
+    <div *ngFor="let cell of leadingSpaces" class="date empty-date" (click)="cellClicked(cell.date)">
       {{ cell.date ? cell.date.getDate() : '' }}
     </div>
 
@@ -17,8 +17,14 @@
     <div *ngFor="let date of dates" class="date" [ngClass]="{
       'next-month-date': date.date && date.date.getMonth() !== currentMonth.getMonth(),
       'green-date': date.date && isDateInWydarzenia(date.date)
-    }">
+    }" (click)="cellClicked(date.date)">
       {{ date.date ? date.date.getDate() : '' }}
     </div>
   </div>
+</div>
+<div *ngIf="clickedEvents.length > 0">
+  <h3>Associated Events:</h3>
+  <ul>
+    <li *ngFor="let event of clickedEvents">{{ event.data }} {{ event.godzina }} {{ event.nazwa }} {{ event.opis }}</li>
+  </ul>
 </div>

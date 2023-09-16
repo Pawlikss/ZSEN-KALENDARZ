@@ -53,12 +53,24 @@ input {
 .events {
     background-color: #4d5a93;
     border-radius: 10px;
-    height: clamp(200px, 50%, 600px);
-    width: clamp(200px, 75%, 700px);
+    width: 75%;
+    height: 50rem;
     margin-inline: auto;
-    overflow-y: auto
+    overflow-y: auto;   
+    display: flex;
+    flex-direction: column;
 }
-
+.event-stay {
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Ensure it appears above the scrolling content */
+    
+  }
+  .event-scroll {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px); /* Set a max height for the scrollable area; adjust as needed */
+  }
 .data-description {
     display: flex;
     align-items: center;

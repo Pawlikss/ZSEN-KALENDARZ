@@ -14,8 +14,34 @@ export class CalendarComponent {
   constructor(private sharedDataService: SharedDataService) {}
   @Input() currentMonth: Date = new Date();
   wydarzenia: any[] = [];
+  clickedEvents: any[] = [];
+  // Define the cellClicked function to handle cell clicks
+  cellClicked(date: Date | null) {
+    let modifiedDate: Date;
+    if (date){
+    modifiedDate = new Date(date); // Create a new Date object to avoid modifying the original date
+    date.setDate(modifiedDate.getDate() + 1); // Subtract one day
+    }
+    
+    this.clickedEvents = []; // Clear the clickedEvents array
+    if (date) {
+      // Find all the wydarzenia associated with the clicked date
+      const dateString = date.toISOString().split('T')[0];
+      const matchingWydarzenia = this.wydarzenia.filter(
+        (event) => event.data === dateString
+      );
 
-  
+      if (matchingWydarzenia.length > 0) {
+        // Store the associated wydarzenia in the clickedEvents array
+        this.clickedEvents = matchingWydarzenia;
+        // Log the associated wydarzenia
+        console.log('Clicked Date:', date);
+        console.log('Associated Wydarzenia:', this.clickedEvents);
+      } else {
+        console.log('No Wydarzenie found for the clicked date:', date);
+      }
+    }
+  }
 
   daysOfWeek: string[] = ['P', 'W', 'Ś', 'C', 'P', 'S', 'N'];
   miesiac_jaki_mamy=this.currentMonth.toLocaleString('pl-PL', { month: 'long' })+" "+this.currentMonth.getFullYear();
