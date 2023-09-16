@@ -1,5 +1,6 @@
 import { Component, Input, Renderer2, ElementRef, Output, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import {SharedDataService } from "../wyslij-eventy.service"
+
 interface CalendarCell {
   date: Date | null;
 }
@@ -154,6 +155,7 @@ export class CalendarComponent implements OnInit {
       this.wydarzenia = data;
       // Handle data updates here
     });
+    
 
 
 

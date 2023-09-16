@@ -2,6 +2,8 @@ import { Component,HostListener,ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ContainerFormService } from './container-form.service';
+import {SharedDataService } from "../wyslij-eventy.service"
+
 
 @Component({
   selector: 'app-container',
@@ -19,7 +21,7 @@ export class ContainerComponent {
   @ViewChild('Form') form: NgForm | undefined; // Reference to the form
 
 
-  constructor(private eventData: ContainerFormService) {
+  constructor(private eventData: ContainerFormService,private sharedDataService: SharedDataService) {
     this.eventData.events().subscribe((data) => {
       this.events = data;
     })
@@ -46,12 +48,21 @@ export class ContainerComponent {
     console.log('Hour changed to:', newHourValue);
    
   }
+  triggerComponentB() {
+    this.sharedDataService.triggerUpdate();
+  }
   getValues(data: any) {
     console.log(data)
     const data2 = JSON.stringify(data)
+    
     this.eventData.saveEvent(data).subscribe((res) => {
       console.log(res)
+      this.triggerComponentB()
     })
   }
+  ngOnInit() {
+    this.triggerComponentB()
+  }
+  
 }
 

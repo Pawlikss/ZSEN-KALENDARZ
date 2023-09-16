@@ -55,7 +55,12 @@ export class WczytajOsobyComponent {
 
   
   ngOnInit() {
-    this.waznePamietajZebyZaktualizowac()
+    this.waznePamietajZebyZaktualizowac();
+    this.sharedDataService.getUpdateObservable().subscribe(() => {
+      this.waznePamietajZebyZaktualizowac()
+      // Perform the desired logic here
+    });
+    
     
   }
 }
