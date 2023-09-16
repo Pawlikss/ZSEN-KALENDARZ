@@ -17,7 +17,7 @@
 </div>
 <div class="event-scroll">
 <div *ngIf="isDataLoaded">
-    <div *ngFor="let wydarzenie of wydarzenia" style="border:1px solid black;" (click)="logWydarzenieData(wydarzenie)"> <!--nie mma pojecia czemu ale działa ~Dawid 15.09.2023 00:49 -->
+    <div class = "event-item" *ngFor="let wydarzenie of wydarzenia"  (click)="logWydarzenieData(wydarzenie)"> <!--nie mma pojecia czemu ale działa ~Dawid 15.09.2023 00:49 -->
       <p >Data: {{ wydarzenie.data }} Godzina: {{ wydarzenie.godzina }} Nazwa: {{ wydarzenie.nazwa }} Opis: {{ wydarzenie.opis }}</p>
       <!-- <p>Godzina: {{ wydarzenie.godzina }}</p>
       <p>Nazwa: {{ wydarzenie.nazwa }}</p>
