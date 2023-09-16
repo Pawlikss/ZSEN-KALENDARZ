@@ -22,9 +22,15 @@
     </div>
   </div>
 </div>
-<div *ngIf="clickedEvents.length > 0">
-  <h3>Associated Events:</h3>
-  <ul>
-    <li *ngFor="let event of clickedEvents">{{ event.data }} {{ event.godzina }} {{ event.nazwa }} {{ event.opis }}</li>
+
+
+  <div *ngIf="wybranaDataWKalendarzu">
+    <h3 >Associated Events:</h3>
+    <ul *ngIf="clickedEvents.length > 0">
+      <li *ngFor="let event of clickedEvents">{{ event.data }} {{ event.godzina }} {{ event.nazwa }} {{ event.opis }}</li>
+    </ul>
+    <ul>
+    <li *ngIf="clickedEvents.length === 0">No events</li>
   </ul>
-</div>
+  </div>
+  
