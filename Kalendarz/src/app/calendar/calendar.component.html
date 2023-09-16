@@ -1,8 +1,13 @@
 <div class="calendar">
+  <button class="close-calendar" (click)="toggleCalendar()">&times;</button>
   <div class="header">
-    <button (click)="previousMonth()">Wcześniejszy</button>
-    <h2>{{ miesiac_jaki_mamy }}</h2>
-    <button (click)="nextMonth()">Następny</button>
+    
+    <button (click)="previousMonth($event)">Wcześniejszy</button><div>
+      
+    </div>
+    <h2 [innerHTML]="miesiac_jaki_mamy"></h2>
+    <button (click)="nextMonth($event)">Następny</button>
+    
   </div>
   <div class="days">
     <div *ngFor="let day of daysOfWeek" class="day">{{ day }}</div>
@@ -23,14 +28,13 @@
   </div>
 </div>
 
-
-  <div *ngIf="wybranaDataWKalendarzu">
-    <h3 >Associated Events:</h3>
-    <ul *ngIf="clickedEvents.length > 0">
-      <li *ngFor="let event of clickedEvents">{{ event.data }} {{ event.godzina }} {{ event.nazwa }} {{ event.opis }}</li>
-    </ul>
-    <ul>
+<div class="associated-events-container" *ngIf="wybranaDataWKalendarzu">
+  <button class="close-button" (click)="closePopup()">&times;</button>
+  <h3>Associated Events:</h3>
+  <ul *ngIf="clickedEvents.length > 0">
+    <li *ngFor="let event of clickedEvents">{{ event.data }} {{ event.godzina }} {{ event.nazwa }} {{ event.opis }}</li>
+  </ul>
+  <ul>
     <li *ngIf="clickedEvents.length === 0">No events</li>
   </ul>
   </div>
-  

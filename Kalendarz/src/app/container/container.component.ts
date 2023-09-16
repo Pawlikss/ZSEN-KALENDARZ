@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener,ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ContainerFormService } from './container-form.service';
@@ -15,13 +15,28 @@ export class ContainerComponent {
   title: string = "";
   events: any;
   disableInput: boolean = false;
+  isCalendarVisible: boolean = false;
+  @ViewChild('Form') form: NgForm | undefined; // Reference to the form
+
 
   constructor(private eventData: ContainerFormService) {
     this.eventData.events().subscribe((data) => {
       this.events = data;
     })
+  }  
+  
+  wyslij() {
+    if (this.form){
+    this.form.ngSubmit.emit(); // Manually emit the ngSubmit event
+    }
+    // Your toggleCalendar logic here
   }
-
+  
+  toggleCalendar() {
+    
+    this.isCalendarVisible = !this.isCalendarVisible;
+    console.log("poszlo")
+    }
   onDateChange(newDateValue: string) {
     console.log('Date changed to:', newDateValue);
    

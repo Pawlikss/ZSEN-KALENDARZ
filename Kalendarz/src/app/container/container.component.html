@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="left">
-        <form (ngSubmit)="getValues(Form.value)" #Form="ngForm">
+        <form  #Form="ngForm">
             <div class="title">
                 <input type="text" name="nazwa" maxlength="40" class="title-input" placeholder="tytuł"
                     [(ngModel)]="title">
@@ -10,7 +10,14 @@
                 <div class="data-element">
                     <p>Data</p><input name="data" type="date" [(ngModel)]="currentDate"
                         (ngModelChange)="onDateChange($event)">
+                        <button class="open-calendar-button" (click)="toggleCalendar()">Open Calendar</button>
                 </div>
+                <div class="popup-container" [ngClass]="{ 'active': isCalendarVisible }">
+                    <app-calendar (toggle)="toggleCalendar()" [isCalendarVisible]="isCalendarVisible" ></app-calendar>
+
+                  </div>
+                  
+                  
                 <div class="data-element">
                     <p>Cały dzień?</p>
                     <!-- <input type="checkbox" class="hour-able" >
@@ -26,7 +33,7 @@
                 <textarea name="opis" class="description-input" placeholder="Opis wydarzenia (opcjonalne)"
                     [(ngModel)]="description"></textarea>
             </div>
-            <div class="add"><button class="add-button">add</button></div>
+            <div class="add"><button class="add-button" (click) = "getValues(Form.value)">add</button></div>
         </form>
     </div>
     <div>
@@ -38,4 +45,4 @@
         
     </div>
     <!-- dlatego co to czyta, to tylko do testów potem sie coś zroib -->
-    <app-calendar></app-calendar> 
+    <!-- <app-calendar></app-calendar>  -->

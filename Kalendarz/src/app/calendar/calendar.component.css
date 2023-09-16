@@ -1,14 +1,19 @@
 /* calendar.component.css */
 
 .calendar {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    width: 300px;
-    margin: 0 auto;
-    padding: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
   
   .header {
     display: flex;
@@ -97,4 +102,36 @@
 .green-date {
   background-color: green;
   color: white; 
+}
+.associated-events-container {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+}
+.close-calendar{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+}
+
+.close-button:hover {
+  color: #000;
 }
