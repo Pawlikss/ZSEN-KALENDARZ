@@ -35,7 +35,7 @@ export class ContainerComponent {
   toggleCalendar() {
     
     this.isCalendarVisible = !this.isCalendarVisible;
-    console.log("poszlo")
+    // console.log("poszlo")
     }
   onDateChange(newDateValue: string) {
     console.log('Date changed to:', newDateValue);
