@@ -29,35 +29,44 @@ export class CalendarComponent implements OnInit {
   cellClicked(date: Date | null) {
     
     
-    
+    console.log(date)
     if (date){
       if(date?.getDate()+1 == this.modifiedDate.getDate() && this.wybranaDataWKalendarzu ==true){
         this.wybranaDataWKalendarzu = false;
         return
       }
+      let ostatni=new Date(date.getFullYear(), date.getMonth() + 1, 0);
+      if (date.getDay() != ostatni.getDay() || true){
+        
+      
+      
+       
     this.modifiedDate = new Date(date); // Create a new Date object to avoid modifying the original date
-    this.modifiedDate.setDate(this.modifiedDate.getDate() + 1);// Subtract one day by addign one kys
+    this.modifiedDate.setDate(this.modifiedDate.getDate());// Subtract one day by addign one kys
     
     date.setDate(this.modifiedDate.getDate()); 
+      }
     }
     
     this.wybranaDataWKalendarzu = true;
     this.clickedEvents = []; // Clear the clickedEvents array
     if (date) {
       // Find all the wydarzenia associated with the clicked date
-      const dateString = date.toISOString().split('T')[0];
+      const dateString = (new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds())).toISOString()).split("T")[0];
       const matchingWydarzenia = this.wydarzenia.filter(
         (event) => event.data === dateString
       );
-
+      console.log(date);
+      console.log((new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds())).toISOString()).split("T")[0]);      
+      console.log(dateString)
       if (matchingWydarzenia.length > 0) {
         // Store the associated wydarzenia in the clickedEvents array
         this.clickedEvents = matchingWydarzenia;
         // Log the associated wydarzenia
-        console.log('Clicked Date:', date);
-        console.log('Associated Wydarzenia:', this.clickedEvents);
+        // console.log('Clicked Date:', date);
+        // console.log('Associated Wydarzenia:', this.clickedEvents);
       } else {
-        console.log('No Wydarzenie found for the clicked date:', date);
+        // console.log('No Wydarzenie found for the clicked date:', date);
       }
     }
   }
