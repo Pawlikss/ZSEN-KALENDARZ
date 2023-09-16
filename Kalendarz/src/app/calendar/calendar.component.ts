@@ -14,15 +14,26 @@ export class CalendarComponent {
   constructor(private sharedDataService: SharedDataService) {}
   @Input() currentMonth: Date = new Date();
   wydarzenia: any[] = [];
+  wybranaDataWKalendarzu: boolean = false;
+  modifiedDate: Date = new Date(1);
   clickedEvents: any[] = [];
   // Define the cellClicked function to handle cell clicks
   cellClicked(date: Date | null) {
-    let modifiedDate: Date;
+    
+    
+    
     if (date){
-    modifiedDate = new Date(date); // Create a new Date object to avoid modifying the original date
-    date.setDate(modifiedDate.getDate() + 1); // Subtract one day
+      if(date?.getDate()+1 == this.modifiedDate.getDate() && this.wybranaDataWKalendarzu ==true){
+        this.wybranaDataWKalendarzu = false;
+        return
+      }
+    this.modifiedDate = new Date(date); // Create a new Date object to avoid modifying the original date
+    this.modifiedDate.setDate(this.modifiedDate.getDate() + 1);// Subtract one day by addign one kys
+    
+    date.setDate(this.modifiedDate.getDate()); 
     }
     
+    this.wybranaDataWKalendarzu = true;
     this.clickedEvents = []; // Clear the clickedEvents array
     if (date) {
       // Find all the wydarzenia associated with the clicked date
