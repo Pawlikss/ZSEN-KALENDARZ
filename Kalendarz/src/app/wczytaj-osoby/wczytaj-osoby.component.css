@@ -83,15 +83,17 @@ input {
 .event-item {
     color: black;
     border: 3px solid var(--event-item-border);
-    margin-bottom: 1%;
-    margin-top: 1%;
+    margin: 1%;
     border-radius: 10px;
     padding: 2%;
     font-size: 115%;
     word-wrap: break-word;
+    background-color: var(--event-item-border);
 
 }
 
 .event-item:hover {
-    color: var(--button-hover-color);
+    color: grey; 
+    font-weight: bold;
+    font-size: 130%;
 }

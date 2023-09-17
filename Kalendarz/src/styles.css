@@ -16,9 +16,9 @@
 /* do zmian */
 :root {
     /* <main stuff> */
-    --primary-bg-color: #1a203a; /* kolor tła */
-    --secondary-bg-color: #4d5a93; /* kolor ramki wokół opisu i background current events */
-    --accent-color: #bcdced; /* background tytułu i opisu */
+    --primary-bg-color: #617d8a; /* kolor tła */
+    --secondary-bg-color: #cacaca; /* kolor ramki wokół opisu i background current events */
+    --accent-color: rgb(164, 207, 230); /* background tytułu i opisu */
     --button-bg-color: #96ffff;
     --button-hover-color: #79e2e2;
     --button-active-color: #5eb4b4;
