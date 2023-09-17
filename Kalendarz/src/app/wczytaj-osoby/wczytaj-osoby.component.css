@@ -1,5 +1,5 @@
 .events {
-    background-color: #4d5a93;
+    background-color: var(--secondary-bg-color);
     border-radius: 10px;
     width: 75%;
     height: 50rem;
@@ -21,14 +21,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #96ffff;
+    background-color: var(--button-hover-color);
     padding: 1rem;
     box-sizing: border-box
 }
 
 .event-title {
     text-align: center;
-    color: #0f132b;
     font-size: 34px;
     margin: 0.5%;
 
@@ -44,7 +43,7 @@ input {
     justify-content: center;
     align-items: center;
     height: 50px;
-    background-color: #f55944;
+    background-color: var(--event-delete-button);
     color: #fff;
     box-sizing: border-box;
     width: 100px;
@@ -57,7 +56,7 @@ input {
 
 .event-delete:active {
     background-color: #a82121;
-    width: 95px
+    
 }
 
 .event-date {
@@ -83,7 +82,7 @@ input {
 
 .event-item {
     color: #0f132b;
-    border: 3px solid rgb(188, 220, 237);
+    border: 3px solid var(--event-item-border);
     margin-bottom: 1%;
     margin-top: 1%;
     border-radius: 10px;
@@ -94,5 +93,5 @@ input {
 }
 
 .event-item:hover {
-    color: #79e2e2;
+    color: var(--button-hover-color);
 }

@@ -1,8 +1,9 @@
+
 .container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: #1a203a;
+    background-color: var(--primary-bg-color);
     overflow: auto;
 }
 
@@ -14,8 +15,7 @@
     padding: 1rem;
 }
 
-
-
+/* Title */
 .title {
     width: clamp(200px, 95%, 500px);
     height: 2rem;
@@ -28,6 +28,7 @@
     text-align: center;
 }
 
+/* Hour Able */
 .hour-able {
     height: 20px;
     width: 20px;
@@ -44,25 +45,28 @@ textarea {
     resize: none;
 }
 
+/* Title Input */
 .title-input {
     width: 100%;
     height: 100%;
     font-size: 15px;
     padding: 0 10px;
     text-align: center;
-    background-color: #bcdced;
+    background-color: var(--accent-color);
 }
 
+/* Description Input */
 .description-input {
     font-size: 15px;
     padding: 10px;
     height: 90%;
     width: 90%;
     box-sizing: border-box;
-    background-color: #bcdced;
+    background-color: var(--accent-color);
     border-radius: 10px;
 }
 
+/* Data Inputs */
 .data-inputs {
     display: flex;
     justify-content: space-around;
@@ -76,8 +80,9 @@ textarea {
     width: clamp(105px, 95%, 150px);
 }
 
+/* Data Element */
 .data-element {
-    background-color: #4d5a93;
+    background-color: var(--secondary-bg-color);
     border-radius: 10px;
     text-align: center;
     padding: 0.5rem;
@@ -90,48 +95,51 @@ textarea {
     margin: 0;
 }
 
+/* Title Center */
 .title-center {
-    color: gray;
+    color: var(--text-color);
     text-align: center;
     margin: 1rem 0;
 }
 
+/* Events */
 .events {
-    background-color: #4d5a93;
+    background-color: var(--secondary-bg-color);
     border-radius: 10px;
     height: clamp(200px, 50%, 600px);
     width: clamp(200px, 75%, 700px);
     margin-inline: auto;
     overflow-y: auto;
-
 }
 
+/* Add Button */
 .add-button {
-    background-color: #96ffff;
+    background-color: var(--button-bg-color);
     padding: 10px;
     border-radius: 10px;
     margin-top: 1rem;
     justify-content: center;
     width: 100px;
-    color: #12246b;
+    color: var(--text-color);
     font-size: 15px;
     border: none;
 }
 
 .add-button:hover {
-    background-color: #79e2e2;
+    background-color: var(--button-hover-color);
 }
 
 .add-button:active {
-    background-color: #5eb4b4;
+    background-color: var(--button-active-color);
     width: 95px;
 }
 
+/* Data Description */
 .data-description {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #4d5a93;
+    background-color: var(--secondary-bg-color);
     border-radius: 10px;
     height: 500px;
     overflow: hidden;
@@ -139,11 +147,13 @@ textarea {
     box-sizing: border-box;
 }
 
+/* Add */
 .add {
     display: flex;
     justify-content: center;
 }
 
+/* Media Queries */
 @media only screen and (max-width: 850px) {
     .container {
         flex-direction: column;
@@ -167,6 +177,8 @@ textarea {
         height: 400px;
     }
 }
+
+/* Popup Container */
 .popup-container {
     display: none;
     position: fixed;
@@ -174,21 +186,24 @@ textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 9999; /* Ensure it's above everything else */
+    background-color: var(--popup-bg-color);
+    z-index: 9999;
     transition: opacity 0.3s ease-in-out;
-  }
-  
-  .popup-container.active {
+}
+
+.popup-container.active {
     display: block;
     opacity: 1;
-  }
-  
-  .open-calendar-button {
-    margin-top: 10px; /* Adjust the margin as needed */
-  }
-  .associated-events-container {
-    background-color: white;
+}
+
+/* Open Calendar Button */
+.open-calendar-button {
+    margin-top: 10px;
+}
+
+/* Associated Events Container */
+.associated-events-container {
+    background-color: var(--popup-content-bg-color);
     border: 1px solid #ccc;
     padding: 20px;
     position: absolute;
@@ -196,9 +211,10 @@ textarea {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10000;
-  }
-  
-  .close-button {
+}
+
+/* Close Button */
+.close-button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -206,10 +222,9 @@ textarea {
     border: none;
     cursor: pointer;
     font-size: 20px;
-    color: #888;
-  }
-  
-  .close-button:hover {
-    color: #000;
-  }
-  
+    color: var(--close-button-color);
+}
+
+.close-button:hover {
+    color: var(--close-button-hover-color);
+}

@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-bg-color: #1a203a;
+    --secondary-bg-color: #4d5a93;
+    --accent-color: #bcdced;
+    --button-bg-color: #96ffff;
+    --button-hover-color: #79e2e2;
+    --button-active-color: #5eb4b4;
+    --popup-bg-color: rgba(0, 0, 0, 0.5);
+    --event-item-border: rgb(188, 220, 237);
+    --popup-content-bg-color: white;
+    --close-button-color: #888;
+    --close-button-hover-color: #000;
+    --event-delete-button:#f55944;
+}
