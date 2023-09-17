@@ -81,7 +81,7 @@ input {
 }
 
 .event-item {
-    color: #0f132b;
+    color: black;
     border: 3px solid var(--event-item-border);
     margin-bottom: 1%;
     margin-top: 1%;

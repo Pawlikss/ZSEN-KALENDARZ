@@ -1,3 +1,4 @@
+/* oryginalna paleta kolorów */
 :root {
     --primary-bg-color: #1a203a;
     --secondary-bg-color: #4d5a93;
@@ -11,4 +12,25 @@
     --close-button-color: #888;
     --close-button-hover-color: #000;
     --event-delete-button:#f55944;
+}
+/* do zmian */
+:root {
+    /* <main stuff> */
+    --primary-bg-color: #1a203a; /* kolor tła */
+    --secondary-bg-color: #4d5a93; /* kolor ramki wokół opisu i background current events */
+    --accent-color: #bcdced; /* background tytułu i opisu */
+    --button-bg-color: #96ffff;
+    --button-hover-color: #79e2e2;
+    --button-active-color: #5eb4b4;
+    /* </main stuff> */
+    /* <event items> */
+    --event-item-border: rgb(188, 220, 237);
+    --close-button-hover-color: #000;
+    --event-delete-button:#f55944;
+    /* </event items> */
+    /* <app-calendar> */
+    --popup-bg-color: #00000080;
+    --popup-content-bg-color: white;
+    --close-button-color: #888;
+    /* </app-calendar> */
 }

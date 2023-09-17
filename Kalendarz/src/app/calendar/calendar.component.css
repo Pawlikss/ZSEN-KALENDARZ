@@ -1,24 +1,20 @@
-/* calendar.component.css */
-
 .calendar {
-  position: relative; /* Set the container as relative for absolute positioning */
+  position: relative;
   font-family: Arial, sans-serif;
   background-color: #fff;
   border: 1px solid #ccc;
   width: clamp(100px, 90%, 300px);
   margin: 0 auto;
   padding: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3)
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 10px
 }
-
-
 
 .button {
   background-color: #007bff;
@@ -26,92 +22,83 @@
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 3px
 }
 
 .days {
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
+  font-weight: 700
 }
 
 .day {
   flex: 1;
   text-align: center;
-  padding: 5px;
+  padding: 5px
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+  gap: 5px
 }
 
 .date {
   text-align: center;
   padding: 5px;
-  cursor: pointer;
+  cursor: pointer
 }
 
 .date:hover {
-  background-color: #f0f0f0;
+  background-color: #f0f0f0
 }
 
-/* Style for the current date */
 .date.current-date {
   background-color: #007bff;
   color: #fff;
-  border-radius: 50%;
+  border-radius: 50%
 }
 
-/* Style for events on specific dates */
 .date.event-date {
   background-color: #4caf50;
   color: #fff;
-  border-radius: 50%;
+  border-radius: 50%
 }
 
-/* Add more styles and customize as needed */
-/* Add or keep your existing styles here */
-
-/* Style for empty grid cells (leadingSpaces) */
 .date.empty-date {
-  /* background-color: grey; */
-  color: grey;
+  color: grey
 }
 
 .next-month-date {
-  color: gray;
-  /* Change the text color to gray for dates in the next month */
+  color: gray
 }
 
-/* Style for the current date */
 .date.current-date {
   background-color: #007bff;
   color: #fff;
-  border-radius: 50%;
+  border-radius: 50%
 }
 
-/* Style for events on specific dates */
 .date.event-date {
   background-color: #4caf50;
   color: #fff;
-  border-radius: 50%;
+  border-radius: 50%
 }
 
 .green-date {
   background-color: green;
-  color: white;
+  color: #fff
 }
+
 .associated-events-container {
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #ccc;
   padding: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10000;
+  z-index: 10000
 }
 
 .close-button {
@@ -122,26 +109,27 @@
   border: none;
   cursor: pointer;
   font-size: 20px;
-  color: #888;
+  color: #888
 }
 
 .close-calendar {
   position: absolute;
-  top: -8px; /* Adjust top position as needed */
-  right: -5px; /* Adjust right position as needed */
+  top: -8px;
+  right: -5px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   font-size: 30px;
-  color: #888;
-}
-.close-button:hover {
-  color: #000;
+  color: #888
 }
 
-.header > h2 {
-  text-align: center; /* Center-align the text */
+.close-button:hover {
+  color: #000
+}
+
+.header>h2 {
+  text-align: center;
   font-size: 20px;
-  margin: 0; /* Remove any default margin */
-  width: 100%; /* Ensure the text remains centered regardless of its length */
+  margin: 0;
+  width: 100%
 }

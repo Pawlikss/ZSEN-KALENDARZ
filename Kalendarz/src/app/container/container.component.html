@@ -1,5 +1,4 @@
 <div class="container">
-
     <div class="left">
         <form  #Form="ngForm">
             <div class="title">
@@ -14,10 +13,7 @@
                 </div>
                 <div class="popup-container" [ngClass]="{ 'active': isCalendarVisible }">
                     <app-calendar (toggle)="toggleCalendar()" [isCalendarVisible]="isCalendarVisible" ></app-calendar>
-
                   </div>
-                  
-                  
                 <div class="data-element">
                     <p>Cały dzień?</p>
                     <!-- <input type="checkbox" class="hour-able" >
@@ -26,8 +22,6 @@
                         [ngModelOptions]="{standalone: true}">
                     <input name="godzina" type="time" [(ngModel)]="currentHour" [disabled]="disableInput"
                         (ngModelChange)="onHourChange($event)">
-
-
                 </div>
             </div>
             <h1 class="title-center">Opis</h1>
@@ -40,11 +34,7 @@
     </div>
     <div>
         <h1 class="title-center">Current events</h1>
-
-        <!-- <app-event></app-event> -->
         <app-wczytaj-osoby></app-wczytaj-osoby>
-
-
     </div>
     <!-- dlatego co to czyta, to tylko do testów potem sie coś zroib -->
     <!-- <app-calendar></app-calendar>  -->

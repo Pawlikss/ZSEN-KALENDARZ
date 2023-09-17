@@ -1,10 +1,9 @@
-
 .container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     background-color: var(--primary-bg-color);
-    overflow: auto;
+    overflow: auto
 }
 
 .container>div {
@@ -12,50 +11,46 @@
     box-sizing: border-box;
     height: auto;
     flex: 1;
-    padding: 1rem;
+    padding: 1rem
 }
 
-/* Title */
 .title {
     width: clamp(200px, 95%, 500px);
     height: 2rem;
     margin-inline: auto;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 10px
 }
 
 .title ::placeholder {
-    text-align: center;
+    text-align: center
 }
 
-/* Hour Able */
 .hour-able {
     height: 20px;
     width: 20px;
-    border: none;
+    border: none
 }
 
 input,
 textarea {
     border: none;
-    outline: none;
+    outline: 0
 }
 
 textarea {
-    resize: none;
+    resize: none
 }
 
-/* Title Input */
 .title-input {
     width: 100%;
     height: 100%;
     font-size: 15px;
     padding: 0 10px;
     text-align: center;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color)
 }
 
-/* Description Input */
 .description-input {
     font-size: 15px;
     padding: 10px;
@@ -63,56 +58,51 @@ textarea {
     width: 90%;
     box-sizing: border-box;
     background-color: var(--accent-color);
-    border-radius: 10px;
+    border-radius: 10px
 }
 
-/* Data Inputs */
 .data-inputs {
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
     padding-bottom: 20px;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1.5rem
 }
 
 .data-inputs input {
-    width: clamp(105px, 95%, 150px);
+    width: clamp(105px, 95%, 150px)
 }
 
-/* Data Element */
 .data-element {
     background-color: var(--secondary-bg-color);
     border-radius: 10px;
     text-align: center;
-    padding: 0.5rem;
+    padding: .5rem;
     width: clamp(110px, 32%, 170px);
-    color: rgb(36, 27, 27);
+    color: #241b1b
 }
 
 .data-element p {
     font-size: 20px;
-    margin: 0;
+    margin: 0
 }
 
-/* Title Center */
 .title-center {
     color: var(--text-color);
     text-align: center;
-    margin: 1rem 0;
+    margin: 1rem 0
 }
 
-/* Events */
 .events {
     background-color: var(--secondary-bg-color);
     border-radius: 10px;
     height: clamp(200px, 50%, 600px);
     width: clamp(200px, 75%, 700px);
     margin-inline: auto;
-    overflow-y: auto;
+    overflow-y: auto
 }
 
-/* Add Button */
 .add-button {
     background-color: var(--button-bg-color);
     padding: 10px;
@@ -122,19 +112,18 @@ textarea {
     width: 100px;
     color: var(--text-color);
     font-size: 15px;
-    border: none;
+    border: none
 }
 
 .add-button:hover {
-    background-color: var(--button-hover-color);
+    background-color: var(--button-hover-color)
 }
 
 .add-button:active {
     background-color: var(--button-active-color);
-    width: 95px;
+    width: 95px
 }
 
-/* Data Description */
 .data-description {
     display: flex;
     align-items: center;
@@ -144,41 +133,38 @@ textarea {
     height: 500px;
     overflow: hidden;
     text-align: center;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
-/* Add */
 .add {
     display: flex;
-    justify-content: center;
+    justify-content: center
 }
 
-/* Media Queries */
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width:850px) {
     .container {
-        flex-direction: column;
+        flex-direction: column
     }
 
     .events {
         height: 400px;
-        width: clamp(100px, 75%, 700px);
+        width: clamp(100px, 75%, 700px)
     }
 
     .title {
-        width: clamp(100px, 95%, 500px);
+        width: clamp(100px, 95%, 500px)
     }
 
     .container>div {
         min-width: 150px;
-        width: clamp(310px, 100%, 800px);
+        width: clamp(310px, 100%, 800px)
     }
 
     .data-description {
-        height: 400px;
+        height: 400px
     }
 }
 
-/* Popup Container */
 .popup-container {
     display: none;
     position: fixed;
@@ -188,43 +174,14 @@ textarea {
     height: 100%;
     background-color: var(--popup-bg-color);
     z-index: 9999;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity .3s ease-in-out
 }
 
 .popup-container.active {
     display: block;
-    opacity: 1;
+    opacity: 1
 }
 
-/* Open Calendar Button */
 .open-calendar-button {
-    margin-top: 10px;
-}
-
-/* Associated Events Container */
-.associated-events-container {
-    background-color: var(--popup-content-bg-color);
-    border: 1px solid #ccc;
-    padding: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10000;
-}
-
-/* Close Button */
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: var(--close-button-color);
-}
-
-.close-button:hover {
-    color: var(--close-button-hover-color);
+    margin-top: 10px
 }
