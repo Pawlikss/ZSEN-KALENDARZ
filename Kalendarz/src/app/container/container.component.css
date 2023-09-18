@@ -112,7 +112,8 @@ textarea {
     width: 100px;
     color: var(--text-color);
     font-size: 15px;
-    border: none
+    border: none;
+    transition: all 0.25s ease-in-out; 
 }
 
 .add-button:hover {
@@ -163,6 +164,27 @@ textarea {
     .data-description {
         height: 400px
     }
+}
+.inline-block {
+    display: inline-block; /* Display divs next to each other */
+    background-color: var(--button-bg-color);
+    margin-top: 1rem;
+    justify-content: center;
+    width: 100px;
+    color: var(--text-color);
+    font-size: 15px;
+    margin: 0 10px; 
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 1rem;
+    text-decoration: none; 
+    user-select: none;
+    transition: all 0.25s ease-in-out; 
+}
+.inline-block:hover{
+    cursor: pointer; 
+    background-color: #60b460;
 }
 
 .popup-container {

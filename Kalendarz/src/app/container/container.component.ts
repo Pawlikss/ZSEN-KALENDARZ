@@ -16,6 +16,7 @@ export class ContainerComponent {
   title = '';
   disableInput = false;
   isCalendarVisible = false;
+  pokaKalendarz = false;
   @ViewChild('Form') form: NgForm | undefined; // Reference to the form
 
   constructor(
@@ -64,6 +65,14 @@ export class ContainerComponent {
       console.log(res);
       this.triggerComponentB();
     });
+  }
+  wlaczKal(tryb:number){
+    if(tryb == 1){
+    this.pokaKalendarz = true;
+    }
+    else{
+      this.pokaKalendarz = false;
+    }
   }
 
   ngOnInit() {

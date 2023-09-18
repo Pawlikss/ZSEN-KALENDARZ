@@ -65,7 +65,7 @@ app.post("/kalendarz", checkAuthorization, async (req, res) =>{
   if (!data || !nazwa) {
     return res.status(400).json({error: "Bad Request"});
   }
-  if (!godzina ) {req.body.godzina = "allDay"}
+  if (!godzina ) {req.body.godzina = "Cały dzień"}
   if (!opis ) {req.body.opis = ""}
 
   return res.status(200).json({message:"poszło :)"});
@@ -76,7 +76,7 @@ app.post("/kalendarzTest", checkAuthorization, async (req, res) =>{
   if (!data || !nazwa) {
     return res.status(400).json({error: "Bad Request"});
   }
-  if (!godzina ) {req.body.godzina = "allDay"}
+  if (!godzina ) {req.body.godzina = "Cały dzień"}
   if (!opis ) {req.body.opis = ""}
   try {
     await admin.database().ref("wydarzenia/").push(req.body);

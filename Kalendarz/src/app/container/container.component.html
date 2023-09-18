@@ -33,8 +33,18 @@
         </form>
     </div>
     <div>
-        <h1 class="title-center">Current events</h1>
-        <app-wczytaj-osoby></app-wczytaj-osoby>
+        <h1 class="title-center">
+            <div class="inline-block" (click) = "wlaczKal(1)">Current events</div>
+            <div class="inline-block" (click) = "wlaczKal(2)">Calendar</div>
+        </h1>
+        
+        
+        <div *ngIf="pokaKalendarz">
+            <app-calendar ></app-calendar>
+        </div>
+        <div *ngIf="!pokaKalendarz">
+            <app-wczytaj-osoby></app-wczytaj-osoby>
+        </div>
     </div>
     <!-- dlatego co to czyta, to tylko do testów potem sie coś zroib -->
     <!-- <app-calendar></app-calendar>  -->

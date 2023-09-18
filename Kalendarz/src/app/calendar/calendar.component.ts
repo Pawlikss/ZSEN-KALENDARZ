@@ -38,10 +38,10 @@ export class CalendarComponent implements OnInit {
   }
 
   cellClicked(date: Date | null) {
-    console.log(date);
+    // console.log(date);
 
     if (date) {
-      if (date.getDate() + 1 === this.modifiedDate.getDate() && this.wybranaDataWKalendarzu) {
+      if (date.getDate() === this.modifiedDate.getDate() && this.wybranaDataWKalendarzu) {
         this.wybranaDataWKalendarzu = false;
         return;
       }
@@ -64,9 +64,9 @@ export class CalendarComponent implements OnInit {
         (event) => event.data === dateString
       );
 
-      console.log(date);
-      console.log((new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds())).toISOString()).split("T")[0]);      
-      console.log(dateString)
+      // console.log(date);
+      // console.log((new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds())).toISOString()).split("T")[0]);      
+      // console.log(dateString)
 
       if (matchingWydarzenia.length > 0) {
         this.clickedEvents = matchingWydarzenia;
@@ -127,7 +127,7 @@ export class CalendarComponent implements OnInit {
     newMonth.setMonth(newMonth.getMonth() + 1);
     this.currentMonth = newMonth;
     this.miesiac_jaki_mamy = this.currentMonth.toLocaleString('pl-PL', { month: 'long' }) + "<br>" + this.currentMonth.getFullYear();
-    console.log(this.wydarzenia[0]["data"]);
+    // console.log(this.wydarzenia[0]["data"]);
   }
 
   isDateInWydarzenia(date: Date): boolean {
