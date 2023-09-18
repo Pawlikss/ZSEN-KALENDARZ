@@ -94,11 +94,13 @@
   background-color: #fff;
   border: 1px solid #ccc;
   padding: 20px;
+  margin: 20px auto; /* Center horizontally */
+  width: auto;
+  height: auto;
   position: absolute;
-  top: 50%;
+  top: 50%; /* Center vertically */
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10000
 }
 
 .close-button {

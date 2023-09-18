@@ -1,13 +1,9 @@
 <div class="calendar">
   <button class="close-calendar" (click)="toggleCalendar()">&times;</button>
   <div class="header">
-    
-    <button (click)="previousMonth($event)">Wcześniejszy</button><div>
-      
-    </div>
+    <button (click)="previousMonth($event)">Wcześniejszy</button>
     <h2 [innerHTML]="miesiac_jaki_mamy"></h2>
     <button (click)="nextMonth($event)">Następny</button>
-    
   </div>
   <div class="days">
     <div *ngFor="let day of daysOfWeek" class="day">{{ day }}</div>
@@ -37,4 +33,4 @@
   <ul>
     <li *ngIf="clickedEvents.length === 0">No events</li>
   </ul>
-  </div>
+</div>
