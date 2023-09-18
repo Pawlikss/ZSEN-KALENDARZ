@@ -167,7 +167,7 @@ textarea {
 }
 .inline-block {
     display: inline-block; /* Display divs next to each other */
-    background-color: var(--button-bg-color);
+    background-color: var(--secondary-bg-color);
     margin-top: 1rem;
     justify-content: center;
     width: 100px;
@@ -184,7 +184,7 @@ textarea {
 }
 .inline-block:hover{
     cursor: pointer; 
-    background-color: #60b460;
+    background-color: var(--accent-color);
 }
 
 .popup-container {
