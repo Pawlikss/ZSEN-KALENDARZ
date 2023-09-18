@@ -16,15 +16,15 @@
 /* do zmian */
 :root {
     /* <main stuff> */
-    --primary-bg-color: #617d8a; /* kolor tła */
+    --primary-bg-color: #505f66c9; /* kolor tła */
     --secondary-bg-color: #cacaca; /* kolor ramki wokół opisu i background current events */
-    --accent-color: rgb(164, 207, 230); /* background tytułu i opisu */
-    --button-bg-color: #96ffff;
-    --button-hover-color: #79e2e2;
-    --button-active-color: #5eb4b4;
+    --accent-color: rgb(145, 159, 167); /* background tytułu i opisu */
+    --button-bg-color: #72d859;
+    --button-hover-color: #60b460;
+    --button-active-color: #588a54;
     /* </main stuff> */
     /* <event items> */
-    --event-item-border: rgb(188, 220, 237);
+    --event-item-border: rgb(221, 230, 235);
     --close-button-hover-color: #000;
     --event-delete-button:#f55944;
     /* </event items> */
