@@ -9,7 +9,7 @@
     <div class="event-description-2">
       {{ kliknietyEvent.opis || "bez opisu" }}
     </div>
-    <input type="button" class="event-delete" value="delete">
+    <input type="button" class="event-delete" value="delete" (click) = "usunUzytkownika(kliknietyEvent.id)">
 </div>
 </div>
 <div *ngIf="!kliknietyJakisEvent">

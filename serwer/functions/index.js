@@ -92,7 +92,22 @@ app.get("/helo", (req, res) =>{
 app.get("/helo2", (req, res) =>{
   return res.status(200).json({message: "<marquee width=100>poszło</marquee>"});
 });
-
+app.delete("/usun",checkAuthorization,(req, res) =>{
+  const {id} = req.body
+  try{
+    admin.database().ref("wydarzenia/"+id).remove()
+    .then(function() {
+      return res.status(200).json({message:"usunieto "+id})
+    })
+    .catch(function(error) {
+      
+      return res.status(500).json({error:"Internal Server Error"});
+    });
+  }
+  catch (error){
+    return res.status(500).json({error:"Internal Server Error"});
+  }
+});
 
 app.on("error", (err) => {
   console.error("app error:", err);

@@ -183,5 +183,12 @@ textarea {
 }
 
 .open-calendar-button {
-    margin-top: 10px
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: all 1s ease; 
+}
+.open-calendar-button:hover {
+    transform: scale(1.2);
 }

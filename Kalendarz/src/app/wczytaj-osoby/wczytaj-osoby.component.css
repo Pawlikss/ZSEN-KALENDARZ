@@ -89,11 +89,12 @@ input {
     font-size: 115%;
     word-wrap: break-word;
     background-color: var(--event-item-border);
-
+    transition: all 0.5s ease-in-out; 
 }
 
 .event-item:hover {
     color: grey; 
     font-weight: bold;
     font-size: 130%;
+
 }

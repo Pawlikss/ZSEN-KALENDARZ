@@ -11,7 +11,7 @@ export class WczytajOsobyComponent implements OnInit {
   wydarzenia: any[] = [];
   isDataLoaded = false;
   kliknietyJakisEvent = false;
-  kliknietyEvent = { nazwa: '', opis: '', data: '', godzina: '' };
+  kliknietyEvent = { nazwa: '', opis: '', data: '', godzina: '', id:''};
 
   constructor(
     private http: HttpClient,
@@ -30,11 +30,25 @@ export class WczytajOsobyComponent implements OnInit {
     this.kliknietyJakisEvent = true;
     if (this.kliknietyEvent === wydarzenie) {
       this.kliknietyJakisEvent = false;
-      this.kliknietyEvent = { nazwa: '', opis: '', data: '', godzina: '' };
+      this.kliknietyEvent = { nazwa: '', opis: '', data: '', godzina: '' ,id: ''};
       return;
     }
     this.kliknietyEvent = wydarzenie;
   }
+  usunUzytkownika(kogo : any){
+    console.log(kogo)
+    kogo = {id:kogo}
+    const headers = new HttpHeaders({
+      Authorization: 'dupa1234',
+    });
+    this.kliknietyJakisEvent = false;
+    this.http
+    .delete<any>('https://kalendarz-zsen.web.app/usun', { headers:headers, body:kogo })
+    .subscribe((data) => {
+      console.log(data)
+  })
+  this.waznePamietajZebyZaktualizowac()
+}
 
   waznePamietajZebyZaktualizowac() {
     const headers = new HttpHeaders({
@@ -46,6 +60,12 @@ export class WczytajOsobyComponent implements OnInit {
         this.wydarzenia = Object.keys(data['wydarzenia']).map(
           (key) => data['wydarzenia'][key]
         );
+        let i = 0;
+        Object.keys(data["wydarzenia"]).forEach(element => {
+          this.wydarzenia[i].id=element;
+          i+=1
+        });
+        
         this.isDataLoaded = true;
         console.log(this.wydarzenia);
         this.wydarzenia.sort((a, b) => {
