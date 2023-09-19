@@ -11,6 +11,7 @@ export class WczytajOsobyComponent implements OnInit {
   wydarzenia: any[] = [];
   isDataLoaded = false;
   kliknietyJakisEvent = false;
+  czyPusto = false;
   kliknietyEvent = { nazwa: '', opis: '', data: '', godzina: '', id:''};
 
   constructor(
@@ -46,8 +47,9 @@ export class WczytajOsobyComponent implements OnInit {
     .delete<any>('https://kalendarz-zsen.web.app/usun', { headers:headers, body:kogo })
     .subscribe((data) => {
       console.log(data)
+      this.waznePamietajZebyZaktualizowac()
   })
-  this.waznePamietajZebyZaktualizowac()
+  
 }
 
   waznePamietajZebyZaktualizowac() {
@@ -57,6 +59,14 @@ export class WczytajOsobyComponent implements OnInit {
     this.http
       .get<any>('https://kalendarz-zsen.web.app/baza', { headers })
       .subscribe((data) => {
+        console.log(data)
+        if (!data["wydarzenia"]){
+          console.log("pusto")
+          this.czyPusto = true
+          this.isDataLoaded = false
+          this.sharedDataService.updateWydarzenia([]);
+          return
+        }
         this.wydarzenia = Object.keys(data['wydarzenia']).map(
           (key) => data['wydarzenia'][key]
         );

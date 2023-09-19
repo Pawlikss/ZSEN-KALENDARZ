@@ -27,7 +27,13 @@
   </div>
   
   <div *ngIf="!isDataLoaded">
-    <p>Loading data...</p>
+    
+    <div *ngIf="czyPusto">
+      <p>Nie znaleziono eventów</p>
+    </div>
+    <div *ngIf="!czyPusto">
+      <p>Loading data...</p>
+    </div>
   </div>
 </div>
 </div>
