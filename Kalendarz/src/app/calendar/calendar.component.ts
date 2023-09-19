@@ -42,7 +42,7 @@ export class CalendarComponent implements OnInit {
 
     if (date) {
       if (date.getDate() === this.modifiedDate.getDate() && this.wybranaDataWKalendarzu) {
-        this.wybranaDataWKalendarzu = false;
+        this.wybranaDataWKalendarzu = false; // he he
         return;
       }
 

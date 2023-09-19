@@ -29,13 +29,13 @@
                 <textarea name="opis" class="description-input" placeholder="Opis wydarzenia (opcjonalne)"
                     [(ngModel)]="description"></textarea>
             </div>
-            <div class="add"><button class="add-button" (click) = "getValues(Form.value)">add</button></div>
+            <div class="add"><button class="add-button" (click) = "getValues(Form.value)">dodaj</button></div>
         </form>
     </div>
     <div>
         <h1 class="title-center">
-            <div class="inline-block" (click) = "wlaczKal(2)">Current events</div>
-            <div class="inline-block" (click) = "wlaczKal(1)">Calendar</div>
+            <div class="inline-block" (click) = "wlaczKal(2)">Nadchodzące</div>
+            <div class="inline-block czyTelefon" (click) = "wlaczKal(1)">Kalendarz</div>
         </h1>
         
         

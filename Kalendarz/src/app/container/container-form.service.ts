@@ -13,13 +13,13 @@ export class ContainerFormService {
 
     events() {
         const headers = new HttpHeaders({
-            'Authorization': 'dupa1234', 
+            'Authorization': 'ZHVwYTEyMzQKZHVwYTEyMzQ=', 
           });
         return this.http.get(this.url2,{headers})
     }
     saveEvent(data: any) {
         const headers = new HttpHeaders({
-            'Authorization': 'dupa1234', 
+            'Authorization': 'ZHVwYTEyMzQKZHVwYTEyMzQ=', 
           });
 
 
@@ -41,6 +41,7 @@ export class ContainerFormService {
             return dateA.localeCompare(dateB);
             });
      this.sharedDataService.updateWydarzenia(wydarzenia);
+     alert("dodano: 👍")
         });
         
         return result

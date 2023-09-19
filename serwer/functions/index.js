@@ -32,7 +32,7 @@ app.use(cors);
 app.use(bodyParser.json());
 
 
-const secretAuthCode = "dupa1234";
+const secretAuthCode = "ZHVwYTEyMzQKZHVwYTEyMzQ=";
 
 // Middleware to check for valid authorization
 const checkAuthorization = (req, res, next) => {
@@ -43,7 +43,7 @@ const checkAuthorization = (req, res, next) => {
   next();
 };
 
-// A test route to check the base
+// A test route to check the base 
 app.get("/baza",checkAuthorization, (req, res) => {
   return admin.database().ref("wydarzenia/").once("value", (snapshot) => {
     const event = snapshot.val();

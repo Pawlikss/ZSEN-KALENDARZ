@@ -40,21 +40,23 @@ export class WczytajOsobyComponent implements OnInit {
     console.log(kogo)
     kogo = {id:kogo}
     const headers = new HttpHeaders({
-      Authorization: 'dupa1234',
+      Authorization: 'ZHVwYTEyMzQKZHVwYTEyMzQ=',
     });
     this.kliknietyJakisEvent = false;
     this.http
     .delete<any>('https://kalendarz-zsen.web.app/usun', { headers:headers, body:kogo })
     .subscribe((data) => {
+      
       console.log(data)
       this.waznePamietajZebyZaktualizowac()
+      alert("usunieto: 👍")
   })
   
 }
 
   waznePamietajZebyZaktualizowac() {
     const headers = new HttpHeaders({
-      Authorization: 'dupa1234',
+      Authorization: 'ZHVwYTEyMzQKZHVwYTEyMzQ=',
     });
     this.http
       .get<any>('https://kalendarz-zsen.web.app/baza', { headers })
